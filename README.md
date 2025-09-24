@@ -21,7 +21,7 @@ Each script is designed to be modular and flexible via JSON-based configuration 
 
 ## Installation
 
-1. **Download the dataset** from https://zenodo.org/records/17189796 and add the dataset to the data folder.
+1. **Download the dataset** from https://zenodo.org/records/17189796 and add the dataset as folder called "data" in the main directory.
 
 2. **Open a terminal** and navigate to that directory:
 
