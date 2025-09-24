@@ -1,0 +1,40 @@
+{
+    "data":
+    {
+        "real_not_simu": false,
+        "data_folder": "data/",
+        "folder_cf": "simulation/wind_0_7/rect_1/",
+        "default_exp": "ex1/",
+        "all_exp": ["ex1/", "ex2/", "ex3/", "ex4/", "ex5/", "ex6/", "ex7/", "ex8/", "ex9/", "ex10/"],
+        "file_gt": "simulation/wind_0_7/gt/gt.csv" 
+    },
+    "envi":
+    {
+        "poss_min_max": [
+            [3.0, 1.0, 0.7],
+            [9.0, 3.0, 0.8]
+        ],
+        "cons_min_max": [0.0, 1000.0],
+        "n_dims": 2,
+        "res": 0.1,
+        "cons_init_value": 0.0,
+        "wind_speed": -0.7
+    },
+    "eval":
+    {
+        "metric_names": ["mae", "shape"],
+        "source_pos": [[7.25, 2.0]]
+    },
+    "kernel":
+    {
+        "std": 0.05,
+        "infl_radius": 1.0,
+        "stretching": 0.7
+    },
+    "ls":
+    {
+        "precision": 30,
+        "res": 0.1
+    }
+}
+

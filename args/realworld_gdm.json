@@ -1,0 +1,39 @@
+{
+    "data":
+    {
+        "real_not_simu": true,
+        "data_folder": "data/",
+        "folder_cf": "realworld/2025_02_05/",
+        "default_exp": "ex7/",
+        "all_exp": ["ex1/", "ex2/", "ex3/", "ex4/", "ex5/", "ex6/", "ex7/", "ex8/", "ex9/", "ex10/"],
+        "file_gt": "realworld/gt_2025_02_04/gt_mean_std.csv"
+    },
+    "envi":
+    {
+        "poss_min_max": [
+            [3.0, 1.0, 0.7],
+            [9.0, 3.0, 0.8]
+        ],
+        "cons_min_max": [0.0, 1000.0],
+        "n_dims": 2,
+        "res": 0.1,
+        "cons_init_value": 0.0,
+        "wind_speed": -0.7
+    },
+    "eval":
+    {
+        "metric_names": ["mae", "shape"],
+        "source_pos": [[7.25, 2.0]]
+    },
+    "kernel":
+    {
+        "std": 0.04,
+        "infl_radius": 0.8,
+        "stretching": 0.8
+    },
+    "ls":
+    {
+        "precision": 30,
+        "res": 0.1
+    }
+}
