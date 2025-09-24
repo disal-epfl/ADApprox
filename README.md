@@ -1,13 +1,26 @@
 
 # ADApprox: Physics-Based Gas Mapping with Nano Aerial Vehicles
 
-This repository contains the source code for **ADApprox**, a novel Gas Distribution Mapping (GDM) algorithm grounded in the advection-diffusion equation. It provides robust interpolation capabilities using sparse gas sensor data collected by Nano Aerial Vehicles (NAVs), as described in the publication:
+This repository contains the source code for **ADApprox**, a novel Gas Distribution Mapping (GDM) algorithm grounded in the advection-diffusion equation. It provides robust inter- and extrapolation capabilities using sparse gas sensor measurements. In addition, **ADApprox** is tested for Gas Source Localization (GSL) applications. The algorithm is evaluated in simulation and physical experiments where the data is collected by Nano Aerial Vehicles (NAVs).
 
-**“Physics-Based Gas Mapping with Nano Aerial Vehicles: The ADApprox Algorithm”**  
-*Nicolaj Bösel-Schmid, Wanting Jin, Alcherio Martinoli*  
-[EPFL, 2025]
 
-## Repository Overview
+## Links
+
+### Video
+[![Watch the video](https://img.youtube.com/vi/eO6mU8thfkI/maxresdefault.jpg)](https://www.youtube.com/watch?v=eO6mU8thfkI)
+
+### Dataset
+The dataset can be downloaded from https://zenodo.org/records/17189796.
+
+### Paper
+
+If you use this code or dataset, please cite:
+
+> Bösel-Schmid, N., Jin, W., & Martinoli, A. (2025). *Physics-Based Gas Mapping with Nano Aerial Vehicles: The ADApprox Algorithm*. In Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025.
+
+
+
+## Code
 
 The code base is structured around three main scripts:
 
@@ -17,9 +30,7 @@ The code base is structured around three main scripts:
 
 Each script is designed to be modular and flexible via JSON-based configuration defined in `args/`.
 
----
-
-## Installation
+### Installation
 
 1. **Download the dataset** from https://zenodo.org/records/17189796 and add the dataset as folder called "data" in the main directory.
 
@@ -49,11 +60,9 @@ Each script is designed to be modular and flexible via JSON-based configuration 
    micromamba activate gdm
    ```
 
----
+### `run_mapping.py`
 
-## 1. `run_mapping.py`
-
-### Description
+1. **Description**
 
 Runs the complete gas mapping pipeline on a **single experiment** using both:
 
@@ -62,7 +71,7 @@ Runs the complete gas mapping pipeline on a **single experiment** using both:
 
 Results are visualized and saved.
 
-### Usage
+2. **Usage**
 
 ```bash
 python run_mapping.py
@@ -70,18 +79,16 @@ python run_mapping.py
 
 This defaults to using the `args/realworld_gdm.json` configuration.
 
-### Outputs
+3. **Outputs**
 
 - Mean measurements and robot trajectory
 - Gas maps (ground truth, ADApprox, Kernel DM+V/W)
 - Variance maps (ground truth, ADApprox, Kernel DM+V/W)
 - Learned parameters of ADApprox
 
----
+### `run_evaluation.py`
 
-## 2. `run_evaluation.py`
-
-### Description
+1. **Description**
 
 Evaluates the ADApprox and baseline Kernel DM+V/W methods over **multiple experiments** (real-world and simulated). The script includes several benchmark scenarios:
 
@@ -89,7 +96,7 @@ Evaluates the ADApprox and baseline Kernel DM+V/W methods over **multiple experi
 - Simulated GDM with different wind speeds and sensor spacings
 - Real-world and simulated GSL evaluation
 
-### Usage
+2. **Usage**
 
 ```bash
 python run_evaluation.py
@@ -103,16 +110,14 @@ This will sequentially run all evaluation modes:
 - `run_eval_real_gsl()` (Fig. 6 in publication)
 - `run_eval_simu_gsl()` (Fig. 4 in publication)
 
-### Outputs
+3. **Outputs**
 
 - CSV files (e.g., `results_kernel.csv`, `results_ls_0_1.csv`) summarizing evaluation metrics
 - Box plots and comparison figures for each scenario
 
----
+### `run_optimization.py`
 
-## 3. `run_optimization.py`
-
-### Description
+1. **Description**
 
 Performs grid search to optimize hyperparameters for:
 
@@ -121,7 +126,7 @@ Performs grid search to optimize hyperparameters for:
 
 Optimization is performed over both **simulation** and **real-world** datasets using shape metric as the objective.
 
-### Usage
+2. **Usage**
 
 ```bash
 python run_optimization.py
@@ -135,16 +140,11 @@ This runs the following by default:
 
 You can customize parameter search ranges and metrics inside the respective function calls.
 
-### Outputs
+3. **Outputs**
 
 - Grid search histogram for performance visualization
 - Best-performing hyperparameter combinations printed to console
 
-
 ---
 
-## Citation
 
-If you use this code or dataset, please cite:
-
-> Bösel-Schmid, N., Jin, W., & Martinoli, A. (2025). *Physics-Based Gas Mapping with Nano Aerial Vehicles: The ADApprox Algorithm*. In Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025.
