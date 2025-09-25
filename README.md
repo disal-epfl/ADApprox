@@ -14,7 +14,7 @@ The dataset can be downloaded from https://zenodo.org/records/17189796.
 
 ### Paper
 
-If you use this code or dataset, please cite:
+The publication is freely available: https://infoscience.epfl.ch/entities/publication/c9f806c5-b080-4fb8-aa33-43d4416a7a82. If you are using the code, the dataset or some ideas from this work, please cite:
 
 > Bösel-Schmid, N., Jin, W., & Martinoli, A. (2025). *Physics-Based Gas Mapping with Nano Aerial Vehicles: The ADApprox Algorithm*. In Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2025.
 
@@ -144,7 +144,5 @@ You can customize parameter search ranges and metrics inside the respective func
 
 - Grid search histogram for performance visualization
 - Best-performing hyperparameter combinations printed to console
-
----
 
 
